@@ -93,7 +93,17 @@ Se encargará de procesar la información contenida en los XMLs a través de los
 
 ### Uso de los scripts "extract_abstracts.py" y "generate_wordcloud.py"
 
+El primero extrae los 'abstracts' de todos los XMLs y los condensa en un solo archivo all_abstracts.txt en la ruta: 
 
-## Licencia
+- `/grobid_client_python/processed_xmls`
 
-Información sobre la licencia bajo la cual se distribuye el proyecto.
+A continuación, el siguiente script es llamado y genera una nube de palabras en formato png sobre la raiz:
+
+- `/grobid_client_python`
+
+Ejemplo de 10 PDFs relacionados con el deporte: 
+
+
+
+
+
