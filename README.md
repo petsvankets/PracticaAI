@@ -6,6 +6,8 @@ Este proyecto automatiza la extracción y análisis de información de documento
 
 Para ejecutar este proyecto, necesitas tener Docker instalado en tu sistema. Si aún no lo tienes, puedes descargarlo e instalarlo desde [Docker Hub](https://hub.docker.com/).
 
+Todas las dependencias y librerias de python necesarias se hayan ya sobre los Dockerfiles correspondientes.
+
 ## Estructura del Proyecto
 
 El proyecto consta de dos servicios principales:
@@ -101,9 +103,19 @@ A continuación, el siguiente script es llamado y genera una nube de palabras en
 
 - `/grobid_client_python`
 
-Ejemplo de 10 PDFs relacionados con el deporte: 
+Ejemplo con 10 PDFs relacionados con el deporte: 
 
 ![Ejemplo de WordCloud](wordcloud.png)
+
+
+### Uso del scripts "extract_links.py.py".
+
+Este script obtiene los links de cada uno de los XMLs y genera un archivo .txt para cada PDF con sus respectivos links en: 
+
+- `/grobid_client_python/processed_xmls`
+
+Ejemplo de un txt:
+
 
 
 
