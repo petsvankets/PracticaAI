@@ -15,8 +15,8 @@ El proyecto consta de dos servicios principales:
 
 Cada servicio tiene su propio `Dockerfile` y se encuentra en su respectiva carpeta:
 
-- `/servicio-grobid`
-- `/servicio-python`
+- `/grobid_client_python`
+- `/Grobid`
 
 ## Configuración de la Red Docker
 
@@ -25,7 +25,7 @@ Para que los servicios puedan comunicarse entre sí, necesitan estar en la misma
 1. Crea una red Docker:
 
     ```bash
-    docker network create mi-red-docker
+    docker network create grobid-network
     ```
 
 ## Ejecución del Servicio de GROBID
@@ -35,19 +35,19 @@ Para construir y ejecutar el contenedor de GROBID, sigue estos pasos:
 1. Navega a la carpeta del servicio de GROBID:
 
     ```bash
-    cd servicio-grobid
+    cd Grobid
     ```
 
 2. Construye la imagen Docker:
 
     ```bash
-    docker build -t mi-grobid .
+    docker build -t mi-imagen-grobid .
     ```
 
 3. Ejecuta el contenedor añadiéndolo a la red:
 
     ```bash
-    docker run --rm --name grobid-container --network mi-red-docker -p 8070:8070 -p 8071:8071 mi-grobid
+    docker run -t --rm --name contenedor-grobid --network grobid-network -p 8070:8070 -p 8071:8071 mi-imagen-grobid
     ```
 
 ## Ejecución del Servicio de Python
@@ -57,24 +57,28 @@ Para construir y ejecutar el contenedor del servicio de Python, sigue estos paso
 1. Navega a la carpeta del servicio de Python:
 
     ```bash
-    cd servicio-python
+    cd grobid_client_python
     ```
 
 2. Construye la imagen Docker:
 
     ```bash
-    docker build -t mi-servicio-python .
+    docker build -t grobid-client-python .
     ```
 
 3. Ejecuta el contenedor añadiéndolo a la misma red que GROBID:
 
     ```bash
-    docker run --rm --name python-container --network mi-red-docker mi-servicio-python
+    docker run --name mi-aplicacion-python-container --network grobid-network -e GROBID_URL=http://contenedor-grobid:8070 grobid-client-python
     ```
 
-## Contribuir
+## Explicación Servicio de Python
 
-Instrucciones para contribuir al proyecto, si es aplicable.
+El servicio Python recoge aquellos PDFs que se encuentran en la ruta:
+
+- `/grobid_client_python/resources/test_pdf`
+
+Y posteriormente llama al servicio GROBID del otro contenedor de Docker para procesar estos últimos.
 
 ## Licencia
 
