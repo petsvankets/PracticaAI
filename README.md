@@ -110,13 +110,18 @@ Ejemplo con 10 PDFs relacionados con el deporte:
 
 ### Uso del scripts "extract_links.py.py".
 
-Este script obtiene los links de cada uno de los XMLs y genera un archivo .txt para cada PDF con sus respectivos links en: 
+Este script obtiene los links de cada uno de los XMLs y genera un archivo .txt por cada PDF con sus respectivos links en: 
 
 - `/grobid_client_python/processed_xmls`
 
-Ejemplo de un txt:
+### Uso del scripts "visualize_figures_count.py".
+
+Este script genera visualmente la cantidad de links que tienen todos los PDFs y lo grafica depositando la imagen final en: 
+
+- `/grobid_client_python/processed_xmls/figure`
 
 
+![Ejemplo de WordCloud](figures_count.png)
 
 
 
