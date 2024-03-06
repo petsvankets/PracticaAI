@@ -80,6 +80,20 @@ El servicio Python recoge aquellos PDFs que se encuentran en la ruta:
 
 Y posteriormente llama al servicio GROBID del otro contenedor de Docker para procesar estos últimos.
 
+La respuesta de este servicio es procesada y deja un archivo XML por cada uno de los PDFs que se encontraban en la ruta ya mencionada y deja la respuesta en:
+
+- `/grobid_client_python/resources/test_out`
+
+A partir de aquí, el script de arranque "example.py" alojado en el directorio raiz:
+
+- `/grobid_client_python`
+
+Se encargará de procesar la información contenida en los XMLs a través de los diferentes scripts que se encargan del análisis.
+
+
+### Uso de los scripts "extract_abstracts.py" y "generate_wordcloud.py"
+
+
 ## Licencia
 
 Información sobre la licencia bajo la cual se distribuye el proyecto.
