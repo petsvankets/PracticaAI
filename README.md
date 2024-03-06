@@ -103,6 +103,8 @@ A continuación, el siguiente script es llamado y genera una nube de palabras en
 
 Ejemplo de 10 PDFs relacionados con el deporte: 
 
+![Ejemplo de WordCloud](wordcloud.png)
+
 
 
 
