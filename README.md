@@ -1,6 +1,9 @@
 # Automatización de Análisis de Documentos PDF con GROBID
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10790978.svg)](https://doi.org/10.5281/zenodo.10790978)
+
 Este proyecto automatiza la extracción y análisis de información de documentos PDF académicos o científicos utilizando el servicio GROBID. GROBID es una herramienta poderosa diseñada para convertir documentos PDF en datos estructurados XML, permitiendo un análisis detallado y preciso del contenido. El objetivo principal del proyecto es facilitar el procesamiento masivo de documentos PDF para extraer insights valiosos, como la generación de nubes de palabras de los abstracts, el conteo de enlaces y la identificación del número de figuras en cada documento.
+
 
 ## Requisitos Previos
 
